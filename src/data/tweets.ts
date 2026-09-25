@@ -1,5 +1,21 @@
 import type { Tweet } from "../types/Tweet";
 
+export type TweetImage = {
+  url: string;
+  alt: string;
+};
+
+export type Tweet = {
+  id: string;
+  authorName: string;
+  content: string;
+  createdAt: string;
+  image?: TweetImage;
+  authorHandle: string;
+  parentId?: string;
+};
+
+
 export const initialTweets: Tweet[] = [
   {
     id: "1",

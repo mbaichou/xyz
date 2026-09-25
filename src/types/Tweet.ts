@@ -1,14 +1,14 @@
 export type TweetImage = {
-    url: string;
-    alt: string;
-  };
+  url: string;
+  alt: string;
+};
 
 export type Tweet = {
-    id: string;
-    authorName: string;
-    content: string;
-    createdAt: string;
-    image?: TweetImage;
-    authorHandle: string;
+  id: string;
+  authorName: string;
+  content: string;
+  createdAt: string;
+  image?: TweetImage;
+  authorHandle: string;
+  parentId?: string;
 };
-  
