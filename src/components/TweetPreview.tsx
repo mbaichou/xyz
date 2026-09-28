@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { Tweet } from "../types/Tweet";
+import { Link } from "react-router-dom";
 
 type TweetPreviewProps = {
   tweet: Tweet;
@@ -34,6 +35,9 @@ export function TweetPreview({ tweet }: TweetPreviewProps): React.JSX.Element {
           {isExpanded ? "Voir moins" : "Voir plus"}
         </button>
       )}
+
+      <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
+
 
       <p>{formattedDate}</p>
     </article>
