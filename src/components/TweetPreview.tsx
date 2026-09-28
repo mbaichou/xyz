@@ -7,7 +7,7 @@ type TweetPreviewProps = {
 
 export function TweetPreview({ tweet }: TweetPreviewProps): React.JSX.Element {
   const [isExpanded, setIsExpanded] = useState(false);
-  const formattedDate = new Date(tweet.createdAt).toLocaleDateString("France");
+  const formattedDate = new Date(tweet.createdAt).toLocaleDateString("fr-FR");
 
   const isLong = tweet.content.length > 180;
   const displayedContent = isLong && !isExpanded
