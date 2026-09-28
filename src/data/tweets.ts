@@ -83,4 +83,23 @@ export const initialTweets: Tweet[] = [
     content: "Le monde serait bien meilleur si les gens comprenaient qu'il n'y a pas qu'une seule façon de voir les choses.",
     createdAt: "2026-07-11T18:05:00.000Z",
   },
+
+  {
+    id: "11",
+    authorName: "Charles Babbage",
+    authorHandle: "charles_babbage",
+    content: "C'est exactement cela, chère Ada. Votre vision dépasse de loin le simple calcul de nombres.",
+    createdAt: "2026-07-02T14:00:00.000Z",
+    parentId: "1",
+  },
+  {
+    id: "12",
+    authorName: "John von Neumann",
+    authorHandle: "john_von_neumann",
+    content: "L'architecture que nous concevons aujourd'hui pourrait bien être le premier pas vers cette réflexion mécanique, Alan.",
+    createdAt: "2026-07-06T09:15:00.000Z",
+    parentId: "4",
+  },
+
+
 ];
