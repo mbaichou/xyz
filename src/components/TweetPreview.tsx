@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 type TweetPreviewProps = {
   tweet: Tweet;
+  linkToDetail?: boolean;
 };
 
-export function TweetPreview({ tweet }: TweetPreviewProps): React.JSX.Element {
+export function TweetPreview({ tweet, linkToDetail = true }: TweetPreviewProps): React.JSX.Element {
   const [isExpanded, setIsExpanded] = useState(false);
   const formattedDate = new Date(tweet.createdAt).toLocaleDateString("fr-FR");
-
   const isLong = tweet.content.length > 180;
   const displayedContent = isLong && !isExpanded
     ? tweet.content.slice(0, 180) + "..."
@@ -20,24 +20,35 @@ export function TweetPreview({ tweet }: TweetPreviewProps): React.JSX.Element {
       <h3>{tweet.authorName}</h3>
       <p>@{tweet.authorHandle}</p>
 
-      {tweet.image && ( //L'affiche que si elle existe 
-        <img
-          src={tweet.image.url}
-          alt={tweet.image.alt}
-          className="tweet-image"
-        />
+      {tweet.image && ( // l'affiche que si elle existe 
+        linkToDetail ? (
+          <Link to={`/tweets/${tweet.id}`}>
+            <img
+              src={tweet.image.url}
+              alt={tweet.image.alt}
+              className="tweet-image"
+            />
+          </Link>
+        ) : (
+          <img
+            src={tweet.image.url}
+            alt={tweet.image.alt}
+            className="tweet-image"
+          />
+        )
       )}
 
       <p>{displayedContent}</p>
 
       {isLong && ( // si c long et si on click on declenche la suite 
-        <button onClick={() => setIsExpanded( (prev) => !prev)}> 
+        <button onClick={() => setIsExpanded((prev) => !prev)}>
           {isExpanded ? "Voir moins" : "Voir plus"}
         </button>
       )}
 
-      <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
-
+      {linkToDetail && (
+        <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
+      )}
 
       <p>{formattedDate}</p>
     </article>

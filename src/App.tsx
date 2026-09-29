@@ -1,11 +1,13 @@
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./App.css";
 
-export function App(): React.JSX.Element { 
+export function App(): React.JSX.Element {
   return (
     <main className="app">
-      <h1>Fil d'actualité XYZ</h1>
-      <Outlet/>
+      <header>
+        <h1>Fil d'actualité XYZ</h1>
+      </header>
+      <Outlet />
     </main>
   );
 }
