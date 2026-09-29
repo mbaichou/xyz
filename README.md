@@ -1,32 +1,45 @@
-# React + TypeScript + Vite
+# Projet XYZ - Programmation Web L3 MIASHS
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Informations
 
-Currently, two official plugins are available:
+- **Prénom / Nom :** Baichou Marwane
+- **Email universitaire :** marwane.baichou4@etu.univ-lorraine.fr
+- **Groupe de TD :** Groupe 2 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Séance 02 - Affichage du fil de tweets
 
-## React Compiler
+### Difficultés rencontrées et solutions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [exemple : confusion entre `import { X }` et `import X` selon le type d'export, corrigé en comprenant la différence entre export nommé et export par défaut]
+- [exemple : oubli d'indentation régulière, réglé avec le formatage automatique de VS Code]
+- [ajoute tes propres difficultés]
 
-## Expanding the Oxlint configuration
+### Apprentissages
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+- [exemple : usage de `useState` et du setter fonctionnel `(prev) => !prev`]
+- [exemple : affichage conditionnel avec `&&`]
+- [ajoute les tiens]
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## Séance 03 - Navigation Master / Detail
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Difficultés rencontrées et solutions
+
+- [exemple : erreur de syntaxe dans un template string (apostrophes au lieu de backticks) empêchant la construction correcte de l'URL]
+- [exemple : différence entre `.find` (un seul élément ou `undefined`) et `.filter` (un tableau)]
+- [ajoute tes propres difficultés]
+
+### Apprentissages
+
+- [exemple : mise en place de `react-router-dom` avec `BrowserRouter`, `Routes`, `Route`]
+- [exemple : `useParams` pour lire un paramètre d'URL]
+- [exemple : gestion d'une route inconnue avec `path="*"`]
+- [ajoute les tiens]
+
+## Usage de l'IA générative
+
+J'ai utilisé Gemini et Claude pour :
+- me faire expliquer des erreurs TypeScript que je ne comprenais pas (par exemple [cite un cas précis rencontré])
+- me faire relire des extraits de code que j'avais écrits, pour vérifier leur logique
+- comprendre la différence entre certains concepts (par exemple [...])
+
+Je n'ai pas fait générer de fonctionnalité à ma place. Les propositions faites par l'IA ont été vérifiées en exécutant `bun run lint`, `bun tsc --noEmit` et `bun run build`, ainsi qu'en testant manuellement le comportement dans le navigateur.

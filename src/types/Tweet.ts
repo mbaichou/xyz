@@ -11,4 +11,6 @@ export type Tweet = {
   image?: TweetImage;
   authorHandle: string;
   parentId?: string;
+  likes: number;
+  likedByMe: boolean;
 };

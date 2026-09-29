@@ -11,6 +11,8 @@ export const initialTweets: Tweet[] = [
       url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/500px-Ada_Lovelace_portrait.jpg",
       alt: "Portrait d'Ada Lovelace",
     },
+    likes: 3,
+    likedByMe: false
   },
   {
     id: "2",
@@ -22,6 +24,8 @@ export const initialTweets: Tweet[] = [
       url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg/500px-Steve_Jobs_Headshot_2010-CROP_%28cropped_2%29.jpg",
       alt: "Portrait de Steve Jobs",
     },
+    likes: 432,
+    likedByMe: false,
   },
   {
     id: "3",
@@ -33,6 +37,8 @@ export const initialTweets: Tweet[] = [
       url: "https://upload.wikimedia.org/wikipedia/commons/5/55/Grace_Hopper.jpg",
       alt: "Portrait de Grace Hopper",
     },
+    likes: 2,
+    likedByMe: false,
   },
   {
     id: "4",
@@ -40,6 +46,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "alan_turing",
     content: "On peut espérer que les machines finiront par rivaliser avec les hommes dans tous les domaines purement intellectuels. Mais par où commencer ? Même pour savoir par où commencer, il faut beaucoup réfléchir.",
     createdAt: "2026-07-05T14:30:00.000Z",
+    likes: 342,
+    likedByMe: false,
   },
   {
     id: "5",
@@ -47,6 +55,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "margaret_hamilton",
     content: "Il n'y avait pas de second choix. Nous devions trouver un moyen, et nous l'avons trouvé.",
     createdAt: "2026-07-06T16:45:00.000Z",
+    likes: 221,
+    likedByMe: false,
   },
   {
     id: "6",
@@ -54,6 +64,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "dennis_ritchie",
     content: "Le C est bizarre, imparfait et a un succès immense.",
     createdAt: "2026-07-07T08:15:00.000Z",
+    likes: 0,
+    likedByMe: false,
   },
   {
     id: "7",
@@ -61,6 +73,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "katherine_johnson",
     content: "J'aimais aller travailler tous les jours.",
     createdAt: "2026-07-08T11:20:00.000Z",
+    likes: 123,
+    likedByMe: false,
   },
   {
     id: "8",
@@ -68,6 +82,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "barbara_liskov",
     content: "Ce que nous cherchions, c'était une manière de construire des logiciels modulaires faciles à modifier et à maintenir.",
     createdAt: "2026-07-09T13:00:00.000Z",
+    likes: 13,
+    likedByMe: false,
   },
   {
     id: "9",
@@ -75,6 +91,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "donald_knuth",
     content: "L'optimisation prématurée est la racine de tous les maux.",
     createdAt: "2026-07-10T17:10:00.000Z",
+    likes: 63,
+    likedByMe: false,
   },
   {
     id: "10",
@@ -82,6 +100,8 @@ export const initialTweets: Tweet[] = [
     authorHandle: "radia_perlman",
     content: "Le monde serait bien meilleur si les gens comprenaient qu'il n'y a pas qu'une seule façon de voir les choses.",
     createdAt: "2026-07-11T18:05:00.000Z",
+    likes: 631,
+    likedByMe: false,
   },
 
   {
@@ -91,6 +111,8 @@ export const initialTweets: Tweet[] = [
     content: "C'est exactement cela, chère Ada. Votre vision dépasse de loin le simple calcul de nombres.",
     createdAt: "2026-07-02T14:00:00.000Z",
     parentId: "1",
+    likes: 6,
+    likedByMe: false,
   },
   {
     id: "12",
@@ -99,6 +121,8 @@ export const initialTweets: Tweet[] = [
     content: "L'architecture que nous concevons aujourd'hui pourrait bien être le premier pas vers cette réflexion mécanique, Alan.",
     createdAt: "2026-07-06T09:15:00.000Z",
     parentId: "4",
+    likes: 2123,
+    likedByMe: false,
   },
 
 
