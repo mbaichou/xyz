@@ -1,16 +1,18 @@
 import { Link, useParams } from "react-router-dom";
-import { initialTweets } from "../data/tweets";
+import { useContext } from "react";
+import { TweetsContext } from "../contexts/TweetsContext";
 import { TweetPreview } from "../components/TweetPreview";
 import { TweetsList } from "../components/TweetsList";
 
 export default function TweetDetailsPage(): React.JSX.Element {
   const { id } = useParams<{ id: string }>();
+  const { tweets } = useContext(TweetsContext)!;
 
   // on cherche le tweet principal
-  const tweet = initialTweets.find((tweet) => tweet.id === id);
+  const tweet = tweets.find((tweet) => tweet.id === id);
 
   // on trouve les reponses a ce tweet
-  const replies = initialTweets.filter((tweet) => tweet.parentId === id);
+  const replies = tweets.filter((tweet) => tweet.parentId === id);
 
   // si le tweet nexiste pas on arrete tout
   if (!tweet) {
