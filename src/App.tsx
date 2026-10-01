@@ -42,6 +42,7 @@ export function App(): React.JSX.Element {
   return (
     <main className="app">
       <header>
+      <img src="/xyz.png" alt="Logo XYZ" className="logo" />
         <h1>Fil d'actualité XYZ</h1>
       </header>
       <TweetsContext.Provider value={context}>

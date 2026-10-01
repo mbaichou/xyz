@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { TweetsContext } from "../contexts/TweetsContext";
 import { TweetPreview } from "../components/TweetPreview";
@@ -8,6 +8,7 @@ import { useDocumentTitle } from "../hooks/useDocumentTitle";
 export default function TweetDetailsPage(): React.JSX.Element {
   const { id } = useParams<{ id: string }>();
   const { tweets, toggleLike } = useContext(TweetsContext)!;
+  const navigate = useNavigate();
 
   // on cherche le tweet principal
   const tweet = tweets.find((tweet) => tweet.id === id);
@@ -30,6 +31,10 @@ export default function TweetDetailsPage(): React.JSX.Element {
   // sinon on montre le tweet et ses reponses
   return (
     <section>
+      {/* Ajout personnel (non demandé par le TD) bouton pour revenir à la page précédente */}
+      <button onClick={() => navigate(-1)} className="back-button">
+        ← Retour
+      </button>
       <TweetPreview tweet={tweet} linkToDetail={false} onToggleLike={toggleLike} />
 
       {replies.length === 0 ? (

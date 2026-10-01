@@ -63,3 +63,16 @@ textarea {
   font-family: inherit;
   box-sizing: border-box;
 }
+
+/* Ajout personnel non demandé par le sujet c un bouton retour sur la page de détail */
+.back-button {
+  background: transparent;
+  color: #51b1ce;
+  font-size: 20px;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+}
+
+.back-button:hover {
+  background: #e6e6e6;
+}
