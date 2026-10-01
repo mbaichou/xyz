@@ -8,7 +8,22 @@ import "./App.css";
 export function App(): React.JSX.Element {
   const [tweets, setTweets] = useState<Array<Tweet>>(initialTweets);
 
-  const context: TweetsContextValue = { tweets };
+  function addTweet(content: string): void {
+    setTweets((prevTweets) => [
+      {
+        id: crypto.randomUUID(),
+        authorName: "Vous",
+        authorHandle: "vous",
+        content,
+        createdAt: new Date().toISOString(),
+        likes: 0,
+        likedByMe: false,
+      },
+      ...prevTweets,
+    ]);
+  }
+
+  const context: TweetsContextValue = { tweets, addTweet };
 
   return (
     <main className="app">
