@@ -23,8 +23,22 @@ export function App(): React.JSX.Element {
     ]);
   }
 
-  const context: TweetsContextValue = { tweets, addTweet };
+  function toggleLike(id: string): void {
+    setTweets((prevTweets) =>
+      prevTweets.map((tweet) => {
+        if (tweet.id !== id) {
+          return tweet;
+        }
+        return {
+          ...tweet,
+          likedByMe: !tweet.likedByMe,
+          likes: tweet.likedByMe ? tweet.likes - 1 : tweet.likes + 1,
+        };
+      }),
+    );
+  }
 
+  const context: TweetsContextValue = { tweets, addTweet, toggleLike };
   return (
     <main className="app">
       <header>

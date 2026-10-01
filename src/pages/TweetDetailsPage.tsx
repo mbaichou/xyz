@@ -3,16 +3,19 @@ import { useContext } from "react";
 import { TweetsContext } from "../contexts/TweetsContext";
 import { TweetPreview } from "../components/TweetPreview";
 import { TweetsList } from "../components/TweetsList";
+import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 export default function TweetDetailsPage(): React.JSX.Element {
   const { id } = useParams<{ id: string }>();
-  const { tweets } = useContext(TweetsContext)!;
+  const { tweets, toggleLike } = useContext(TweetsContext)!;
 
   // on cherche le tweet principal
   const tweet = tweets.find((tweet) => tweet.id === id);
 
   // on trouve les reponses a ce tweet
   const replies = tweets.filter((tweet) => tweet.parentId === id);
+
+  useDocumentTitle(tweet ? `Tweet de ${tweet.authorName}` : "Tweet introuvable");
 
   // si le tweet nexiste pas on arrete tout
   if (!tweet) {
@@ -27,12 +30,12 @@ export default function TweetDetailsPage(): React.JSX.Element {
   // sinon on montre le tweet et ses reponses
   return (
     <section>
-      <TweetPreview tweet={tweet} linkToDetail={false} />
-      
+      <TweetPreview tweet={tweet} linkToDetail={false} onToggleLike={toggleLike} />
+
       {replies.length === 0 ? (
-        <p>Aucune reponse</p>
+        <p>Aucune réponse</p>
       ) : (
-        <TweetsList tweets={replies} />
+        <TweetsList tweets={replies} onToggleLike={toggleLike} />
       )}
     </section>
   );

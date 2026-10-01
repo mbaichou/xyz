@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 type TweetPreviewProps = {
   tweet: Tweet;
   linkToDetail?: boolean;
+  onToggleLike: (id: string) => void;
 };
 
-export function TweetPreview({ tweet, linkToDetail = true }: TweetPreviewProps): React.JSX.Element {
+export function TweetPreview({ tweet, linkToDetail = true, onToggleLike }: TweetPreviewProps): React.JSX.Element {
   const [isExpanded, setIsExpanded] = useState(false);
   const formattedDate = new Date(tweet.createdAt).toLocaleDateString("fr-FR");
   const isLong = tweet.content.length > 180;
@@ -49,7 +50,9 @@ export function TweetPreview({ tweet, linkToDetail = true }: TweetPreviewProps):
       {linkToDetail && (
         <Link to={`/tweets/${tweet.id}`}>Voir la discussion</Link>
       )}
-
+      <button onClick={() => onToggleLike(tweet.id)}>
+        {tweet.likedByMe ? "Je n'aime plus" : "J'aime"} ({tweet.likes})
+      </button>
       <p>{formattedDate}</p>
     </article>
   );
