@@ -5,8 +5,19 @@
   font-family: sans-serif;
 }
 
+header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+}
+
 .tweet {
-  border: 1px solid #e1e8ed;
+  border: 1px solid #6ec7ea;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 16px;
@@ -18,4 +29,37 @@
   object-fit: cover;
   border-radius: 8px;
   margin-top: 8px;
+}
+
+button {
+  background: #e52e62;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  background: #ff4370;
+}
+
+button:disabled {
+  background: #e6e6e6;
+  color: #000000;
+  cursor: not-allowed;
+}
+
+a {
+  color: #51b1ce;
+}
+
+textarea {
+  width: 100%;
+  border: 1px solid #6ec7ea;
+  border-radius: 8px;
+  padding: 8px;
+  font-family: inherit;
+  box-sizing: border-box;
 }
